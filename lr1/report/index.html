@@ -12,6 +12,8 @@
         <link rel="prev" href="../..">
       
       
+        <link rel="next" href="../../lr2/report/">
+      
       
         
       
@@ -573,6 +575,88 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛР2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ЛР2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lr2/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1022,7 +1106,7 @@ Connection: close
 <span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 
 <span class="n">HOST</span> <span class="o">=</span> <span class="s1">'localhost'</span>
-<span class="n">PORT</span> <span class="o">=</span> <span class="mi">9002</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">9003</span>
 
 <span class="n">clients</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">clients_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
@@ -1092,7 +1176,7 @@ Connection: close
 <span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 
 <span class="n">HOST</span> <span class="o">=</span> <span class="s1">'localhost'</span>
-<span class="n">PORT</span> <span class="o">=</span> <span class="mi">9002</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">9003</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">receive_messages</span><span class="p">(</span><span class="n">sock</span><span class="p">):</span>
@@ -1130,7 +1214,7 @@ Connection: close
 </details>
 <h3 id="_11">Работа в терминале</h3>
 <p>Сервер:</p>
-<div class="highlight"><pre><span></span><code>Сервер чата запущен на localhost:9002. Ожидание пользователей...
+<div class="highlight"><pre><span></span><code>Сервер чата запущен на localhost:9003. Ожидание пользователей...
 [Alice подключился из ('127.0.0.1', 59675)]
 [Bob подключился из ('127.0.0.1', 59677)]
 Alice: Hi from Alice
@@ -1140,7 +1224,7 @@ Bob: Hi from Bob
 </code></pre></div>
 <p>Клиент Bob (видит сообщения Alice, своё сообщение ему не приходит):</p>
 <div class="highlight"><pre><span></span><code>Введите имя: Bob
-Подключено к чату localhost:9002. Команда /exit — выход.
+Подключено к чату localhost:9003. Команда /exit — выход.
 &gt; Alice: Hi from Alice
 &gt; /exit
 Вы вышли из чата.
@@ -1154,7 +1238,7 @@ Bob: Hi from Bob
 <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_qs</span>
 
 <span class="n">HOST</span> <span class="o">=</span> <span class="s1">'localhost'</span>
-<span class="n">PORT</span> <span class="o">=</span> <span class="mi">8081</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="mi">8089</span>
 
 <span class="n">grades</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -1272,25 +1356,25 @@ Bob: Hi from Bob
 </details>
 <h3 id="_13">Работа в терминале</h3>
 <p>Добавление оценок:</p>
-<div class="highlight"><pre><span></span><code>$ curl -d "discipline=Математика&amp;grade=5" http://localhost:8081/
-$ curl -d "discipline=Математика&amp;grade=4" http://localhost:8081/
-$ curl -d "discipline=Физика&amp;grade=3" http://localhost:8081/
+<div class="highlight"><pre><span></span><code>$ curl -d "discipline=Математика&amp;grade=5" http://localhost:8089/
+$ curl -d "discipline=Математика&amp;grade=4" http://localhost:8089/
+$ curl -d "discipline=Физика&amp;grade=3" http://localhost:8089/
 </code></pre></div>
 <p>Сервер (оценки по одной дисциплине копятся в одну запись):</p>
-<div class="highlight"><pre><span></span><code>Веб-сервер запущен: http://localhost:8081/
+<div class="highlight"><pre><span></span><code>Веб-сервер запущен: http://localhost:8089/
 Сохранено: Математика — 5
 Сохранено: Математика — 4
 Сохранено: Физика — 3
 </code></pre></div>
 <p>Страница журнала после добавления:</p>
-<div class="highlight"><pre><span></span><code>$ curl -s http://localhost:8081/
+<div class="highlight"><pre><span></span><code>$ curl -s http://localhost:8089/
 &lt;tr&gt;&lt;td&gt;Математика&lt;/td&gt;&lt;td&gt;&lt;ul&gt;&lt;li&gt;5&lt;/li&gt;&lt;li&gt;4&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;Физика&lt;/td&gt;&lt;td&gt;&lt;ul&gt;&lt;li&gt;3&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
 </code></pre></div>
 <p>Неизвестный путь и метод:</p>
-<div class="highlight"><pre><span></span><code>$ curl -o /dev/null -w "%{http_code}" http://localhost:8081/nope
+<div class="highlight"><pre><span></span><code>$ curl -o /dev/null -w "%{http_code}" http://localhost:8089/nope
 404
-$ curl -X PUT -o /dev/null -w "%{http_code}" http://localhost:8081/
+$ curl -X PUT -o /dev/null -w "%{http_code}" http://localhost:8089/
 405
 </code></pre></div>
 
