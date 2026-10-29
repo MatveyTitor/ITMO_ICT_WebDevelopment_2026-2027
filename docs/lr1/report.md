@@ -226,7 +226,7 @@ HTTP-сервер запущен: http://localhost:8080/
     import threading
 
     HOST = 'localhost'
-    PORT = 9002
+    PORT = 9003
 
     clients = {}
     clients_lock = threading.Lock()
@@ -297,7 +297,7 @@ HTTP-сервер запущен: http://localhost:8080/
     import threading
 
     HOST = 'localhost'
-    PORT = 9002
+    PORT = 9003
 
 
     def receive_messages(sock):
@@ -338,7 +338,7 @@ HTTP-сервер запущен: http://localhost:8080/
 Сервер:
 
 ```text
-Сервер чата запущен на localhost:9002. Ожидание пользователей...
+Сервер чата запущен на localhost:9003. Ожидание пользователей...
 [Alice подключился из ('127.0.0.1', 59675)]
 [Bob подключился из ('127.0.0.1', 59677)]
 Alice: Hi from Alice
@@ -351,7 +351,7 @@ Bob: Hi from Bob
 
 ```text
 Введите имя: Bob
-Подключено к чату localhost:9002. Команда /exit — выход.
+Подключено к чату localhost:9003. Команда /exit — выход.
 > Alice: Hi from Alice
 > /exit
 Вы вышли из чата.
@@ -369,7 +369,7 @@ Bob: Hi from Bob
     from urllib.parse import parse_qs
 
     HOST = 'localhost'
-    PORT = 8081
+    PORT = 8089
 
     grades = {}
 
@@ -490,15 +490,15 @@ Bob: Hi from Bob
 Добавление оценок:
 
 ```text
-$ curl -d "discipline=Математика&grade=5" http://localhost:8081/
-$ curl -d "discipline=Математика&grade=4" http://localhost:8081/
-$ curl -d "discipline=Физика&grade=3" http://localhost:8081/
+$ curl -d "discipline=Математика&grade=5" http://localhost:8089/
+$ curl -d "discipline=Математика&grade=4" http://localhost:8089/
+$ curl -d "discipline=Физика&grade=3" http://localhost:8089/
 ```
 
 Сервер (оценки по одной дисциплине копятся в одну запись):
 
 ```text
-Веб-сервер запущен: http://localhost:8081/
+Веб-сервер запущен: http://localhost:8089/
 Сохранено: Математика — 5
 Сохранено: Математика — 4
 Сохранено: Физика — 3
@@ -507,7 +507,7 @@ $ curl -d "discipline=Физика&grade=3" http://localhost:8081/
 Страница журнала после добавления:
 
 ```text
-$ curl -s http://localhost:8081/
+$ curl -s http://localhost:8089/
 <tr><td>Математика</td><td><ul><li>5</li><li>4</li></ul></td><td>2</td></tr>
 <tr><td>Физика</td><td><ul><li>3</li></ul></td><td>1</td></tr>
 ```
@@ -515,8 +515,8 @@ $ curl -s http://localhost:8081/
 Неизвестный путь и метод:
 
 ```text
-$ curl -o /dev/null -w "%{http_code}" http://localhost:8081/nope
+$ curl -o /dev/null -w "%{http_code}" http://localhost:8089/nope
 404
-$ curl -X PUT -o /dev/null -w "%{http_code}" http://localhost:8081/
+$ curl -X PUT -o /dev/null -w "%{http_code}" http://localhost:8089/
 405
 ```
