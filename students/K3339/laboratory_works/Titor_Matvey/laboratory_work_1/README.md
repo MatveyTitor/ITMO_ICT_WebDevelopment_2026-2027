@@ -24,12 +24,12 @@ python task2_tcp/client.py          # ввод: a, b, h — основания �
 cd task3_http && python server.py    # затем открыть http://localhost:8080/
 cd ..                                # вернуться в корень работы
 
-# Задание 4 — многопользовательский чат по TCP (порт 9002)
+# Задание 4 — многопользовательский чат по TCP (порт 9003)
 python task4_chat/server.py
 python task4_chat/client.py         # в нескольких терминалах
 
-# Задание 5 — веб-сервер GET/POST, журнал оценок (порт 8081)
-python task5_webserver/server.py    # затем открыть http://127.0.0.1:8081/
+# Задание 5 — веб-сервер GET/POST, журнал оценок (порт 8089)
+python task5_webserver/server.py    # затем открыть http://127.0.0.1:8089/
 ```
 
 Остановить сервер: `Ctrl+C` в его терминале.

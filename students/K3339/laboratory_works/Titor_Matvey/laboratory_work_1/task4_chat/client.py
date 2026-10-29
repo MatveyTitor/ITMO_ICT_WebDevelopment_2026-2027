@@ -2,7 +2,7 @@ import socket
 import threading
 
 HOST = 'localhost'
-PORT = 9002
+PORT = 9003
 
 
 def receive_messages(sock):
